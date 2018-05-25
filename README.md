@@ -8,7 +8,7 @@ This component uses [PhotoDraweeView](https://github.com/ongakuer/PhotoDraweeVie
 
 This fork is based on the great work of @alwx (Alexander Pantyuhov) and has this changes:
 
-* Android minSDKVersion 21 and targetSdkVersion 26 (configurable).
+* Android minSDKVersion 21 and targetSdkVersion 26 ([configurable](#configure-sdk-versions)).
 * Peer dependent on react-native v0.54 and above.
 * Using the same version of [fresco](https://github.com/facebook/fresco) included by react-native.
 * Updated dependencies
@@ -97,7 +97,6 @@ $ react-native link react-native-photo-view-ex
 
 ## Manual installation
 
-
 ### Android
 
 1. Add these lines to `android/settings.gradle`
@@ -144,3 +143,19 @@ public class MainActivity extends ReactActivity {
 ```
 
 2. Run `pod install`
+
+### Configure SDK Versions
+
+You can configure the SDK versions by using variables from [ExtraPropertiesExtension](https://docs.gradle.org/current/dsl/org.gradle.api.plugins.ExtraPropertiesExtension.html).
+
+In your android/build.gradle file, set the SDK versions that your app is using.
+
+This is an example using the predefined values:
+```groovy
+ext {
+    def buildToolsVersion  = '27.0.3'
+    def minSdkVersion      = 21
+    def compileSdkVersion  = 27
+    def targetSdkVersion   = 27
+}
+```

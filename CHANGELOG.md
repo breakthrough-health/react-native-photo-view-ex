@@ -2,6 +2,9 @@
 
 Fork of [react-native-photo-view](https://github.com/alwx/react-native-photo-view)
 
+#### v1.0.2
+* Allows you to configure the SDK versions using variables from [ExtraPropertiesExtension](https://docs.gradle.org/current/dsl/org.gradle.api.plugins.ExtraPropertiesExtension.html).
+
 #### v1.0.1
 * Fixes error en typings.
 

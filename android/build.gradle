@@ -8,9 +8,10 @@ def computePackageVersion() {
     return json.version
 }
 
-def DEFAULT_COMPILE_SDK_VERSION = 26
-def DEFAULT_BUILD_TOOLS_VERSION = "27.0.3"
-def DEFAULT_TARGET_SDK_VERSION  = 26
+def DEF_BUILD_TOOLS_VERSION = '27.0.3'
+def DEF_MIN_SDK_VERSION     = 21
+def DEF_COMPILE_SDK_VERSION = 27
+def DEF_TARGET_SDK_VERSION  = 27
 
 buildscript {
     repositories {
@@ -18,19 +19,19 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.hasProperty('compileSdkVersion') ? rootProject.compileSdkVersion : DEFAULT_COMPILE_SDK_VERSION
-    buildToolsVersion rootProject.hasProperty('buildToolsVersion') ? rootProject.buildToolsVersion : DEFAULT_BUILD_TOOLS_VERSION
+    compileSdkVersion rootProject.hasProperty('compileSdkVersion') ? rootProject.compileSdkVersion : DEF_COMPILE_SDK_VERSION
+    buildToolsVersion rootProject.hasProperty('buildToolsVersion') ? rootProject.buildToolsVersion : DEF_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion rootProject.hasProperty('targetSdkVersion') ? rootProject.targetSdkVersion : DEFAULT_TARGET_SDK_VERSION
+        minSdkVersion rootProject.hasProperty('minSdkVersion') ? rootProject.minSdkVersion : DEF_MIN_SDK_VERSION
+        targetSdkVersion rootProject.hasProperty('targetSdkVersion') ? rootProject.targetSdkVersion : DEF_TARGET_SDK_VERSION
         versionCode 1
         versionName computePackageVersion()
     }
