@@ -41,10 +41,11 @@ android {
 
 repositories {
     mavenLocal()
-    jcenter()
+    google()
     maven {
         url "$rootDir/../node_modules/react-native/android"
     }
+    jcenter()
 }
 
 dependencies {
