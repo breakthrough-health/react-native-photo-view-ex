@@ -1,5 +1,5 @@
 {
-  "name": "react-native-photo-view-ex",
+  "name": "@btx/react-native-photo-view-ex",
   "version": "1.0.3",
   "description": "Displaying photos with pinch-to-zoom, based on react-native-photo-view",
   "main": "index.js",
